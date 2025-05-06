@@ -1,0 +1,41 @@
+.report-container {
+    background: linear-gradient(rgb(35, 50, 80), black);
+    /* padding: 1% 0; */
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+}
+.report-header {
+    padding: 3% 0;
+    margin: 0;
+    border: 0;
+    text-align: center;
+    color: white;
+    height: 5vh;
+}
+.chart-container {
+    flex: 3;
+    display: flex;
+    flex-direction: column;
+    justify-content:flex-start;
+    align-items: center;
+    
+}
+.chart-container > div {
+    padding-top: 2.5vh;
+    height: 30vh;
+}
+
+.legend-container {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.legend {
+    flex: 1;
+    width: 295px;
+    height: 20vh;
+    border: 2px solid white;
+}

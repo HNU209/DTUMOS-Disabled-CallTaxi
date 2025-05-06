@@ -1,0 +1,18 @@
+.container {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  flex-direction: row;
+  align-items: stretch;
+}
+
+/* 
+.trip-container {
+  flex: 1 0 0;
+} */
+.trip-container {
+  flex: 9 0 0;
+}
+.report-container {
+  flex: 1 0 0;
+}

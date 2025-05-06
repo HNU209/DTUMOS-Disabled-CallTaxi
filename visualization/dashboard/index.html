@@ -1,0 +1,146 @@
+<!-- index.html -->
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="./assets/css/dash.css" rel="stylesheet" type="text/css"/>
+    <script src="./assets/js/tab.js"></script>
+    <script src="./assets/js/stats-loader.js"></script>
+    <script src="plotly-2.14.0.min.js"></script>
+    <title>Results Report</title>
+</head>
+<body>
+    <div id="banner">
+        <h1 id="header-text">RESULTS REPORT</h1>
+    </div>
+    <hr/>
+    <div id="tab">
+        <button class="tablinks" onclick="openCity(event, 'service')">
+            <h5>LEVEL OF SERVICE</h5>
+        </button>
+        <button class="tablinks" onclick="openCity(event, 'status')">
+            <h5>VEHICLE OPERATION STATUS</h5>
+        </button>
+        <button class="tablinks" onclick="openCity(event, 'requests')">
+            <h5>SPATIAL DISTRIBUTION OF CALL REQUESTS</h5>
+        </button>
+    </div>
+
+    <div id="service" class="tabcontent">
+        <h4 class="service-sub-title"><b>1. Call Requests and Failures</b></h4>
+        <div class="fade-alert-show">
+            <li><b>Total number of calls: <span id="total-calls">–</span></b></li>
+            <li><b>Total number of failed calls: <span id="total-failed-calls">–</span></b></li>
+            <li><b>Call failure rate: <span id="failure-rate">–</span>%</b></li>
+            <li><b>Number of call requests and call failures by time zone</b></li>
+        </div>
+        <div class="row2">
+            <div class="col1 dash-graph">
+                <div class="js-plotly-plot">
+                    <iframe src="./assets/figure/figure_1.html" frameborder="0"></iframe>
+                </div>
+            </div>
+            <div class="col2 dash-graph">
+                <div class="js-plotly-plot">
+                    <iframe src="./assets/figure/figure_2.html" frameborder="0"></iframe>
+                </div>
+            </div>
+        </div>
+        <hr/>
+        <h4><b>2. Distribution of Passenger Waiting Times</b></h4>
+        <div class="dash-graph">
+            <div class="js-plotly-plot">
+                <iframe src="./assets/figure/figure_3.html" frameborder="0"></iframe>
+            </div>
+        </div>
+    </div>
+
+    <div id="status" class="tabcontent">
+        <div class="row1">
+            <div class="col1">
+                <h4><b>1. Vehicle Operation Overview</b></h4>
+                <div class="fade-alert-show2">
+                    <li><b>Total number of vehicles operated: <span id="vehicles-driven">–</span> count/day</b></li>
+                </div>
+            </div>
+            <div class="col2"></div>
+        </div>
+        <div id="operating-col" class="dash-graph">
+            <div class="js-plotly-plot">
+                <!-- <iframe data-src="./assets/figure/figure_4.html" frameborder="0"></iframe> -->
+                <iframe src="./assets/figure/figure_4.html" frameborder="0"></iframe>
+            </div>
+        </div>
+        <h4><b>2. Number of Vehicles Operated per Hour</b></h4>
+        <div id="operating-col" class="dash-graph">
+            <div class="js-plotly-plot">
+                <!-- <iframe data-src="./assets/figure/figure_5.html" frameborder="0"></iframe> -->
+                <iframe src="./assets/figure/figure_5.html" frameborder="0"></iframe>
+            </div>
+        </div>
+    </div>
+
+    <div id="requests" class="tabcontent">
+        <div id="num1">
+            <h4><b>1. Pick-up and Drop-off Locations by Time of Day</b></h4>
+            <br/>
+            <li><b>Pick-up</b></li>
+            <div id="requests-col1">
+                <div class="dash-geometry-graph">
+                    <div class="js-plotly-plot">
+                        <iframe src="./assets/figure/figure_6.html" frameborder="0"></iframe>
+                    </div>
+                </div>
+                <div class="dash-geometry-graph">
+                    <div class="js-plotly-plot">
+                        <iframe src="./assets/figure/figure_7.html" frameborder="0"></iframe>
+                    </div>
+                </div>
+            </div>
+            <br/>
+            <li><b>Drop-off</b></li>
+            <div id="requests-col2">
+                <div class="dash-geometry-graph">
+                    <div class="js-plotly-plot">
+                        <iframe src="./assets/figure/figure_8.html" frameborder="0"></iframe>
+                    </div>
+                </div>
+                <div class="dash-geometry-graph">
+                    <div class="js-plotly-plot">
+                        <iframe src="./assets/figure/figure_9.html" frameborder="0"></iframe>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <br/>
+        <div><hr/></div>
+        <br/>
+        <div id="num2">
+            <div id="num2-row1">
+                <div id="num2-row1-col1">
+                    <h4><b>2. Distribution of Call Failures by Administrative Region</b></h4>
+                </div>
+                <div id="num2-row1-col2">
+                    <h4><b>3. Distribution of Passenger Waiting Times by Administrative Region</b></h4>
+                </div>
+            </div>
+            <br/>
+            <div id="num2-row2">
+                <div id="num2-row2-col1">
+                    <div class="dash-geometry-graph">
+                        <div class="js-plotly-plot">
+                            <iframe src="./assets/figure/figure_10.html" frameborder="0"></iframe>
+                        </div>
+                    </div>
+                <div id="num2-row2-col2">
+                    <div class="dash-geometry-graph">
+                        <div class="js-plotly-plot">
+                            <iframe src="./assets/figure/figure_11.html" frameborder="0"></iframe>
+                        </div>
+                    </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
